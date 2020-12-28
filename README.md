@@ -24,8 +24,12 @@ uuid
 - ```./index.js --add "your note" ```
 - ```./index.js -a"your note" ```
 
+### Tests : 
+
+- Jest : ```npm test``` 
+
 ### UML : 
 
 ![/](./uml/uml-class01.png)
 
-
+![/](./uml/uml-class02.png)

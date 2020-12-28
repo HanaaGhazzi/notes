@@ -17,13 +17,27 @@ describe('Input Module', () => {
       const message = new Add();
       expect(message.getAction()).toEqual('Enter a valid action');
     });
-
+    it('asks to enter a valid action if an invalid action was entered', () => {
+      const message = new Add();
+      expect(message.getAction('delete')).toEqual('Enter a valid action');
+    });
   it('getAction() i can see the Note and the Action', () => {
     const message = new Add();
     expect(message.getAction(message.action)).toEqual(message.action);
 
   })
 
+});
+
+describe('getPayload()', () => {
+  it('return undefined when input is not specified', () => {
+    const message = new Add();
+    expect(message.getPayload()).toEqual(undefined);
+  });
+  it('returns string when string is specified', () => {
+    const message = new Add();
+    expect(message.getPayload(message.payload)).toEqual(message.payload);
+  });
 });
 
 describe('valid()', () => {
