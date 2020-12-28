@@ -4,6 +4,6 @@ const Add = require('./lib/input.js')
 const Notes = require('./lib/notes.js')
 
 const message = new Add();
-const txtNote = new Notes(); 
+const txtNote = new Notes(message); 
 
-txtNote.excute(message);
+message.valid() ? txtNote.execute(message) : " please enter valid text" ;
