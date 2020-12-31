@@ -1,19 +1,18 @@
-'use strict'
+'use strict';
 
-
-const Notes = require('../lib/notes.js');
+const Note = require('../lib/notes.js');
 
 jest.spyOn(global.console, 'log');
 
-describe('Note Module', () => {
+describe('NOTE Module', () => {
     it('does nothing when execute() is called with invalid data', () => {
-        const txtNote = new Notes();
-        txtNote.execute();
+        const myNote = new Note({});
+        myNote.execute({});
         expect(console.log).not.toHaveBeenCalled();
     });
     it('logs data when execute() is called with valid data', () => {
-        const txtNote = new Notes();
-        txtNote.execute({ action: 'add', payload: 'text note' });
+        const myNote = new Note({ action: 'add', payload: 'my note', action2:'category', category:'work' });
+        myNote.execute({ action: 'add', payload: 'my note', action2:'category', category:'work' });
         expect(console.log).toHaveBeenCalled();
     });
   });
